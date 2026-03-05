@@ -1,0 +1,31 @@
+[ml_platform]
+project = "demo-model-serving"
+python_version = "3.11"
+training_image = "ghcr.io/example/training@sha256:1111111111111111111111111111111111111111111111111111111111111111"
+inference_image = "ghcr.io/example/inference@sha256:2222222222222222222222222222222222222222222222222222222222222222"
+data_sha256 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+model_sha256 = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+approval_required = true
+promotion_strategy = "canary"
+canary_percent = 10
+rollback_strategy = "instant"
+
+[iac]
+terraform_required_version = "=1.7.5"
+providers = { aws = "=5.40.0", kubernetes = "=2.28.0" }
+state_backend = "remote"
+inventory_dev = "examples/iac/env_dev.json"
+inventory_prod = "examples/iac/env_prod.json"
+
+[observability]
+otel_enabled = true
+traces_sample_ratio = 0.2
+logs_correlation = true
+required_metrics = ["latency_p95", "error_rate", "throughput"]
+runbooks = [
+  "docs/runbooks/ml_release_guardrails.md",
+  "docs/runbooks/iac_drift_response.md",
+  "docs/runbooks/observability_triage.md",
+]
+service_config = "examples/observability/service.toml"
+

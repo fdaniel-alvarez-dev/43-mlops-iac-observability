@@ -1,0 +1,18 @@
+[service]
+name = "inference-api"
+environment = "prod"
+
+[otel]
+enabled = true
+exporter = "otlp"
+sampling_ratio = 0.2
+
+[signals]
+metrics = ["latency_p95", "error_rate", "throughput"]
+logs_correlation = true
+trace_id_field = "trace_id"
+
+[slo]
+latency_p95_ms = 400
+error_rate = 0.01
+

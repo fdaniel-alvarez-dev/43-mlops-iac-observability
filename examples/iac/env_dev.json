@@ -1,0 +1,21 @@
+{
+  "environment": "dev",
+  "resources": [
+    {
+      "id": "k8s.deployment.api",
+      "replicas": 2,
+      "image": "ghcr.io/example/inference@sha256:2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "id": "k8s.hpa.api",
+      "min_replicas": 2,
+      "max_replicas": 10,
+      "target_cpu_utilization": 70
+    },
+    {
+      "id": "network.ingress.api",
+      "tls_enabled": true
+    }
+  ]
+}
+
