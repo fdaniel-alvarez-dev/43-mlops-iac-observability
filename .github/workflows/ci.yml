@@ -13,5 +13,4 @@ jobs:
         with:
           python-version: "3.11"
       - run: make lint
-      - run: make test
-
+      - run: make test-demo

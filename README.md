@@ -20,6 +20,7 @@ See `docs/architecture.md` for the full flow and threat-model notes.
 ```bash
 make setup
 make demo
+make test-demo
 ```
 
 Then open `artifacts/report.md`.
@@ -49,3 +50,21 @@ Full details: `docs/security.md`.
 - Deploying real infrastructure or a real ML model (this is a deterministic, local portfolio demo).
 - Third-party tooling (the runnable parts are standard library only by design).
 
+## Sponsorship and contact
+
+Sponsored by:
+CloudForgeLabs  
+https://cloudforgelabs.ainextstudios.com/  
+support@ainextstudios.com
+
+Built by:
+Freddy D. Alvarez  
+https://www.linkedin.com/in/freddy-daniel-alvarez/
+
+For job opportunities, contact:
+it.freddy.alvarez@gmail.com
+
+## License
+
+Personal, educational, and non-commercial use is free. Commercial use requires paid permission.
+See `LICENSE` and `COMMERCIAL_LICENSE.md`.

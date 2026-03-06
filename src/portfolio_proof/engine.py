@@ -478,7 +478,6 @@ def generate_report(result: ValidationResult) -> str:
     lines.append("")
     lines.append("## Recommended next steps")
     lines.append("- Automate `portfolio_proof validate` as a required CI gate before promotion.")
-    lines.append("- Treat drift findings as prompts to document intent (or reconcile to code).")
+    lines.append("- Treat drift findings as signals to document intent (or reconcile to code).")
     lines.append("- Keep runbooks versioned and referenced from service/config defaults.")
     return "\n".join(lines) + "\n"
-
